@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += \
     IconPackRoundedSystemUIOverlay \
     IconPackRoundedThemePickerOverlay \
     IconShapePebbleOverlay \
+    IconShapeRiceBallsOverlay \
     IconShapeRoundedRectOverlay \
     IconShapeSquareOverlay \
     IconShapeSquircleOverlay \
