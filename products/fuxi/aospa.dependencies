@@ -1,20 +1,20 @@
 [
     {
-        "remote":       "aospa",
-        "repository":   "AOSPA/android_device_xiaomi_fuxi",
+        "remote":       "github",
+        "repository":   "aospa-pp/android_device_xiaomi_fuxi",
         "target_path":  "device/xiaomi/fuxi",
         "revision":     "uvite"
     },
     {
-        "remote":       "aospa",
-        "repository":   "AOSPA/android_device_xiaomi_fuxi-kernel",
+        "remote":       "github",
+        "repository":   "aospa-pp/android_device_xiaomi_fuxi-kernel",
         "target_path":  "device/xiaomi/fuxi-kernel",
         "revision":     "uvite",
         "clone-depth":  "1"
     },
     {
-        "remote":       "aospa",
-        "repository":   "AOSPA/android_device_xiaomi_sm8550-common",
+        "remote":       "github",
+        "repository":   "aospa-pp/android_device_xiaomi_sm8550-common",
         "target_path":  "device/xiaomi/sm8550-common",
         "revision":     "uvite"
     },
@@ -61,8 +61,8 @@
         "revision":     "uvite-8550"
     },
     {
-        "remote":       "blobs",
-        "repository":   "proprietary_vendor_xiaomi",
+        "remote":       "github",
+        "repository":   "aospa-pp/proprietary_vendor_xiaomi",
         "target_path":  "vendor/xiaomi",
         "revision":     "uvite",
         "clone-depth":  "1"
