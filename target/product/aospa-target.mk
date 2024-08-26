@@ -90,6 +90,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.aospa.power-service
 
+# Google - GMS, Pixel, and Mainline Modules
+$(call inherit-product, vendor/google/gms/config.mk)
+$(call inherit-product, vendor/google/pixel/config.mk)
+ifneq ($(TARGET_EXCLUDE_GMODULES), true)
+$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
+endif
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
      vendor/aospa/target/config/aospa_vendor_framework_compatibility_matrix.xml
