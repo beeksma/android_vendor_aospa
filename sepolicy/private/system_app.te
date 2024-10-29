@@ -1,0 +1,3 @@
+# QTI BoostFramework
+get_prop(system_app, qti_boost_framework_prop)
+set_prop(system_app, qti_boost_framework_prop)
