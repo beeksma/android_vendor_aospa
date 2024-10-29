@@ -18,3 +18,7 @@ allow system_server zygote_tmpfs:file rw_file_perms;
 
 # PIH
 add_service(system_server, pih_manager_service);
+
+# QTI BoostFramework
+get_prop(system_server, qti_boost_framework_prop)
+set_prop(system_server, qti_boost_framework_prop)

@@ -3,3 +3,6 @@ persist.sys.pihooks.disable.            u:object_r:pih_disable_prop:s0
 
 # Tethering
 persist.device_config.tethering.        u:object_r:device_config_tethering_prop:s0
+
+# QTI BoostFramework
+persist.qti.boost_framework.enabled     u:object_r:qti_boost_framework_prop:s0
