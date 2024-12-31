@@ -43,6 +43,13 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # Boot Animation
 $(call inherit-product, vendor/aospa/bootanimation/bootanimation.mk)
 
+# BCR
+PRODUCT_PACKAGES += \
+  BasicCallRecorder
+
+PRODUCT_SOONG_NAMESPACES += \
+  vendor/bcr
+
 # Camera
 PRODUCT_PACKAGES += \
     GoogleCameraGo
