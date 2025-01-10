@@ -5,5 +5,6 @@
 -->
 <config>
     <overlay package="co.aospa.android.certifiedprops.overlay" enabled="true" />
+    <overlay package="co.aospa.deviceconfig.overlay" enabled="true" />
 </config>
 

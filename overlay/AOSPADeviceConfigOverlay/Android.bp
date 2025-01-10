@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "AOSPADeviceConfigOverlay",
+    system_ext_specific: true,
+}

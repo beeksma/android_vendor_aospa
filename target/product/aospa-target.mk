@@ -66,6 +66,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Debloater
 
+# Device config
+PRODUCT_PACKAGES += \
+    SimpleDeviceConfig
+
 # Dex2oat
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     dalvik.vm.dex2oat64.enabled=true
