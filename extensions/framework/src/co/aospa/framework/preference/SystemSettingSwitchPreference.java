@@ -18,10 +18,10 @@
 package co.aospa.framework.preference;
 
 import android.content.Context;
-import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.SwitchPreference;
 import android.util.AttributeSet;
 
-public class SystemSettingSwitchPreference extends SwitchPreferenceCompat {
+public class SystemSettingSwitchPreference extends SwitchPreference {
 
     public SystemSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

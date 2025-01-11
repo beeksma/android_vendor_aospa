@@ -20,9 +20,9 @@ package co.aospa.framework.preference;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.SwitchPreference;
 
-public class SecureSettingSwitchPreference extends SwitchPreferenceCompat {
+public class SecureSettingSwitchPreference extends SwitchPreference {
 
     public SecureSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
