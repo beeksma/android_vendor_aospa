@@ -40,19 +40,10 @@ static const std::vector<ChargingEnabledNode> kChargingEnabledNodes = {
          static_cast<int>(ChargingControlSupportedMode::TOGGLE)},
 #endif
 };
-#endif
-
-#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
-static const std::vector<std::string> kChargingDeadlineNodes = {
-        HEALTH_CHARGING_CONTROL_DEADLINE_PATH,
-        "/sys/class/power_supply/battery/charge_deadline",
-};
-#endif
 
 #define OPEN_RETRY_COUNT 10
 
-ChargingControl::ChargingControl() : mChargingEnabledNode(nullptr), mChargingDeadlineNode(nullptr) {
-#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE
+ChargingControl::ChargingControl() : mChargingEnabledNode(nullptr) {
     while (!mChargingEnabledNode) {
         for (const auto& node : kChargingEnabledNodes) {
             for (int retries = 0; retries < OPEN_RETRY_COUNT; retries++) {
@@ -65,25 +56,8 @@ ChargingControl::ChargingControl() : mChargingEnabledNode(nullptr), mChargingDea
             }
         }
     }
-#endif
-
-#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
-    while (!mChargingDeadlineNode) {
-        for (const auto& node : kChargingDeadlineNodes) {
-            for (int retries = 0; retries < OPEN_RETRY_COUNT; retries++) {
-                if (access(node.c_str(), R_OK | W_OK) == 0) {
-                    mChargingDeadlineNode = &node;
-                    break;
-                }
-                PLOG(WARNING) << "Failed to access() file " << node;
-                usleep(100000);
-            }
-        }
-    }
-#endif
 }
 
-#ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE
 ndk::ScopedAStatus ChargingControl::getChargingEnabled(bool* _aidl_return) {
     std::string content;
     if (!android::base::ReadFileToString(mChargingEnabledNode->path, &content, true)) {
@@ -126,6 +100,24 @@ ndk::ScopedAStatus ChargingControl::setChargingEnabled(bool /* enabled */) {
 #endif
 
 #ifdef HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE
+static const std::vector<std::string> kChargingDeadlineNodes = {
+        HEALTH_CHARGING_CONTROL_DEADLINE_PATH,
+        "/sys/class/power_supply/battery/charge_deadline",
+};
+
+ChargingControl::ChargingControl() : mChargingDeadlineNode(nullptr) {
+    while (!mChargingDeadlineNode) {
+        for (const auto& node : kChargingDeadlineNodes) {
+            if (access(node.c_str(), R_OK | W_OK) == 0) {
+                mChargingDeadlineNode = &node;
+                break;
+            }
+            PLOG(WARNING) << "Failed to access() file " << node;
+            usleep(100000);
+        }
+    }
+}
+
 ndk::ScopedAStatus ChargingControl::setChargingDeadline(int64_t deadline) {
     std::string content = std::to_string(deadline);
     if (!android::base::WriteStringToFile(content, *mChargingDeadlineNode, true)) {
