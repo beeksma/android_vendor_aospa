@@ -24,6 +24,7 @@ PRODUCT_PACKAGES += \
     AOSPASettingsProviderOverlay \
     AOSPASystemUIOverlay \
     CertifiedPropsOverlay \
+    FontComfortaaOverlay \
     FontExotwoOverlay \
     FontGoogleSansOverlay \
     FontHarmonySansOverlay \
