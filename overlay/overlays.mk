@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
     FontNotoSansOverlay \
     FontOnePlusSansOverlay  \
     FontOppoSansOverlay \
+    FontStoropiaOverlay \
     FontUrbanistOverlay \
     IconPackCircularAndroidOverlay \
     IconPackCircularLauncherOverlay \
