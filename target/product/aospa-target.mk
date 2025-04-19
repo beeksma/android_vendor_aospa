@@ -105,8 +105,16 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/aospa/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
     vendor/aospa/target/config/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
-# Google - GMS, Pixel, and Mainline Modules
-$(call inherit-product, vendor/google/gms/config.mk)
+# FOSS
+PRODUCT_PACKAGES += \
+    AuroraStore \
+    AuroraServices \
+    ContactsProvider \
+    Contacts \
+    Dialer \
+    Quik
+
+# Google & MicroG
 $(call inherit-product, vendor/google/pixel/config.mk)
 $(call inherit-product, vendor/partner_gms/products/gms.mk)
 
