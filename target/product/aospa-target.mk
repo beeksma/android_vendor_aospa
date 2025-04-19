@@ -108,9 +108,11 @@ PRODUCT_COPY_FILES += \
 # Google - GMS, Pixel, and Mainline Modules
 $(call inherit-product, vendor/google/gms/config.mk)
 $(call inherit-product, vendor/google/pixel/config.mk)
-ifneq ($(TARGET_EXCLUDE_GMODULES), true)
-$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
-endif
+$(call inherit-product, vendor/partner_gms/products/gms.mk)
+
+PRODUCT_PACKAGES += \
+    AndroidAuto \
+    StorageManager
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
