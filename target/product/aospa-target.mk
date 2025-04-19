@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
     ContactsProvider \
     Contacts \
     Dialer \
+    LatinIME \
     Quik
 
 # Google & MicroG
