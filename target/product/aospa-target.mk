@@ -116,10 +116,6 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/google/pixel/config.mk)
 $(call inherit-product, vendor/partner_gms/products/gms.mk)
 
-PRODUCT_PACKAGES += \
-    AndroidAuto \
-    StorageManager
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
      vendor/aospa/target/config/aospa_vendor_framework_compatibility_matrix.xml
