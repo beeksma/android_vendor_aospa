@@ -108,8 +108,6 @@ PRODUCT_COPY_FILES += \
 # FOSS
 PRODUCT_PACKAGES += \
     AuroraStore \
-    ContactsProvider \
-    Contacts \
     Dialer \
     LatinIME \
     Quik
