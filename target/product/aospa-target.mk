@@ -108,9 +108,7 @@ PRODUCT_COPY_FILES += \
 # FOSS
 PRODUCT_PACKAGES += \
     AuroraStore \
-    Dialer \
-    LatinIME \
-    Quik
+    LatinIME
 
 # Google & MicroG
 $(call inherit-product, vendor/google/pixel/config.mk)
