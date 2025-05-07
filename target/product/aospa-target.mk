@@ -107,7 +107,6 @@ PRODUCT_COPY_FILES += \
 
 # FOSS
 PRODUCT_PACKAGES += \
-    AuroraStore \
     LatinIME
 
 # Google & MicroG
