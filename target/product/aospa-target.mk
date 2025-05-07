@@ -85,6 +85,11 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.systemuicompilerfilter=speed
 
+# Dialer and Contacts
+PRODUCT_PACKAGES += \
+    Dialer \
+    Contacts
+
 # Display
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     debug.sf.frame_rate_multiple_threshold=60 \
