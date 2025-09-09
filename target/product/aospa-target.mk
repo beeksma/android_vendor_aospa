@@ -112,7 +112,8 @@ PRODUCT_COPY_FILES += \
 
 # FOSS
 PRODUCT_PACKAGES += \
-    LatinIME
+    LatinIME \
+    Seedvault
 
 # Google & MicroG
 $(call inherit-product, vendor/google/pixel/config.mk)
